@@ -1,0 +1,109 @@
+$primary-color: #8a2be2;
+$secondary-color: #6a0dad;
+$background-color: #1a1a2e;
+$text-color: #e0e0e0;
+$error-color: #ff6b6b;
+$success-color: #48bb78;
+$border-color: #4a4a6a;
+$card-bg-color: #2a2a4a;
+
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 30px;
+$border-radius: 8px;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: $text-color;
+}
+
+.login-container {
+  background-color: $card-bg-color;
+  padding: $spacing-lg;
+  border-radius: $border-radius;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: $spacing-md;
+    text-shadow: 0 0 5px rgba($primary-color, 0.5);
+  }
+}
+
+.login-form {
+  .input-group {
+    margin-bottom: $spacing-md;
+
+    label {
+      display: block;
+      margin-bottom: $spacing-sm / 2;
+      font-weight: bold;
+      color: lighten($text-color, 10%);
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: $spacing-sm;
+      border: 1px solid $border-color;
+      border-radius: $border-radius / 2;
+      box-sizing: border-box;
+      font-size: 1rem;
+      background-color: darken($card-bg-color, 5%);
+      color: $text-color;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.4);
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: $spacing-sm;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius / 2;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .message {
+    text-align: center;
+    margin-top: $spacing-md;
+    font-weight: bold;
+    
+    &.error {
+      color: $error-color;
+    }
+
+    &.success {
+      color: $success-color;
+    }
+  }
+}
